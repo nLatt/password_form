@@ -8,8 +8,7 @@ def form(request):
     form = UserForm(request.POST or None)
     if form.is_valid():
         form.save()
-        print("-------------------", form)
-        return HttpResponseRedirect("/thanks/")
+        return HttpResponseRedirect("logged_in/")
 
     return render(request, "form.html", {"form": form})
 
