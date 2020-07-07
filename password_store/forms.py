@@ -6,7 +6,6 @@ class UserForm(forms.ModelForm):
     def clean_password(self):
         password = self.cleaned_data["password"]
         password = hashlib.sha512(bytes(password, "utf-8")).hexdigest()
-        # print("\n\n\n{}\n\n\n".format(type(password)))
         return password
 
     class Meta:
