@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from .forms import UserForm
+from .models import User
 # Create your views here.
 
 def form(request):
