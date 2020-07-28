@@ -7,7 +7,7 @@ from passlib.hash import argon2 as a2
 class UserForm(forms.ModelForm):
     def clean_password(self):
         password = self.cleaned_data["password"]
-        password = a2.using(rounds=30).hash(password)
+        password = a2.using(rounds=30, salt_size=5000, digest_size=5000).hash(password)
         return password
 
     class Meta:
